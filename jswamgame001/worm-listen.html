@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Worm</title>
+    <!--Style-->
+    <style>
+        html, body {
+            margin: 0px;
+            padding: 0px;
+            border: 0px;
+        }
+        div {
+            width: 360px;
+            color: brown;
+            margin: auto;
+        }
+
+        h1, p {
+            text-align: center;
+        }
+        table {
+            background: tan;
+            border-collapse: collapse;
+        }
+        td.hole {
+            background: url( hole.png )
+        }
+        td.rank {
+            background: brown;
+            color: white;
+        }
+        img.worm {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1>Whack-a-Worm!</h1>
+        <p>A challenging fun game of skill and speed.</p>
+        <ul>
+            <li>Worms will pop out of any hole TEN times</li>
+            <li>Whack as many as you can - you must be QUICK</li>
+            <li>Hit the START button to begin playing...</li>
+        </ul>
+<!--Table For Whack-a-Mole Images-->
+        <table>
+            <tr>
+                <td class="hole">
+                <img class="worm" src="worm.png" alt="Worm"></td>
+                <td class="hole">
+                    <img class="worm" src="worm.png" alt="Worm"></td>
+                    <td class="hole">
+                        <img class="worm" src="worm.png" alt="Worm"></td>
+                </td>
+            </tr>
+            <tr>
+                <td class="hole">
+                <img class="worm" src="worm.png" alt="Worm"></td>
+                <td class="hole">
+                    <img class="worm" src="worm.png" alt="Worm"></td>
+                    <td class="hole">
+                        <img class="worm" src="worm.png" alt="Worm"></td>
+                </td>
+            </tr>
+<tr>
+    <td class="rank" colspan="3">
+        <button id="startButton">Start</button>
+        Hits: <strong id="scoreBoard">0</strong>
+    </td>
+</tr>
+        </table>
+        <p>
+            Author: <a href="https://www.ineasyteps.com"> In Easy Steps</a>
+        </p>
+        <!--Javascript-->
+        <script>
+            var worms = document.getElementsByClassName("worm");
+            var board = document.getElementById("scoreBoard");
+            var start = document.getElementById("startButton");
+
+            start.addEventListener("click", startGame);
+
+            var i = 0;
+            while (i < worms.length);{
+                worms[i].addEventListener("mouseup", tapOrClick);
+                worms[i].addEventListener("touchend", tapOrClick);
+                i++;   
+            }
+            function tapOrClick(event); {
+                event.preventDefault();
+                board.innerText = parseInt(board.innerText) + 1;
+                return false ;
+            }
+            function startGame(); {
+                start.disabled = true;
+                board.innerText = 0;
+                alert("Game Started, Do Your Best");
+            }
+        </script>
+    </div>
+    
+</body>
+</html>
