@@ -1,22 +1,33 @@
 
+document.getElementById('issueInputForm').addEventListener('submit', saveIssue);
 
 function fetchIssues () {
     var issues = JSON.parse(localStorage.getItem('issues'));
     var issuesList = document.getElementById('issuesList');
 
-    issuesList.innerHTML +=   '<div class="well">'+
-    '<h6>Issue ID: ' + id + '</h6>'+
-    '<p><span class="label label-info">' + status + '</span></p>'+
-    '<h3>' + desc + '</h3>'+
-    '<p><span class="glyphicon glyphicon-time"></span> ' + severity + ' '+
-    '<span class="glyphicon glyphicon-user"></span> ' + assignedTo + '</p>'+
-    '<a href="#" class="btn btn-warning" onclick="setStatusClosed(\''+id+'\')">Close</a> '+
-    '<a href="#" class="btn btn-danger" onclick="deleteIssue(\''+id+'\')">Delete</a>'+
-    '</div>';
+    issuesList.innerHTML +=     '<div class="well">'+
+                                '<h6>Issue ID: ' + id + '</h6>'+
+                                '<p><span class="label label-info">' + status + '</span></p>'+
+                                '<h3>' + desc + '</h3>'+
+                                '<p><span class="glyphicon glyphicon-time"></span> ' + severity + ' '+
+                                '<span class="glyphicon glyphicon-user"></span> ' + assignedTo + '</p>'+
+                                '<a href="#" class="btn btn-warning" onclick="setStatusClosed(\''+id+'\')">Close</a> '+
+                                '<a href="#" class="btn btn-danger" onclick="deleteIssue(\''+id+'\')">Delete</a>'+
+                                '</div>';
 }
 
-document.getElementById('issueInputForm').addEventListener('submit', saveIssue);
+if (localStorage.getItem('issues') === null) {
+    var issues = [];
+    issues.push(issue);
+    localStorage.setItem('issues', JSON.stringify(issues));
+} else {
+    var issues = JSON.parse(localStorage.getItem('issues'));
+    issues.push(issues);
+    localStorage.setItem('issues', JSON.stringify(issues));
+}
+
 document.getElementById('issueInputForm').reset();
+
 
 function saveIssue(e) {
     var issueID = chance.guid();
@@ -33,16 +44,23 @@ function saveIssue(e) {
         status: issueStatus
     }
 
-    if (localStorage.getItem('issues') === null) {
-        var issues = [];
-        issues.push(issue);
-        localStorage.setItem('issues', JSON.stringify(issues));
-    } else {
-        var issues = JSON.parse(localStorage.getItem('issues'));
-        issues.push(issues);
-        localStorage.setItem('issues', JSON.stringify(issues));
-    }
+
 
     fetchIssues();
+
     e.preventDefault();
 }
+
+function deleteIssue (id) {
+    var issues = JSON.parse(localStorage.getItem('issues'));
+    
+    for(var i = 0; i < issues.length; i++) {
+      if (issues[i].id == id) {
+        issues.splice(i, 1);
+      }
+    }
+    
+    localStorage.setItem('issues', JSON.stringify(issues));
+    
+    fetchIssues();
+  }
