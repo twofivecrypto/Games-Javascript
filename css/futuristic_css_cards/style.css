@@ -12,24 +12,27 @@ body {
     min-height: 100vh;
     background: #1d061a;
 }
+
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Fixed the justify-content property */
     align-items: center;
     flex-wrap: wrap;
     padding: 40px 0;
 }
-.container .box{
+
+.container .box {
     position: relative;
-    width: 320px;;
-    height: 400px;;
+    width: 320px;
+    height: 400px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 40px 30px;
     transition: 0.5s;
 }
-.container .box::before{
+
+.container .box::before {
     content: "";
     position: absolute;
     top: 0;
@@ -41,7 +44,8 @@ body {
     transform: skewX(15deg);
     transition: 0.5s;
 }
-.container .box::after{
+
+.container .box::after {
     content: "";
     position: absolute;
     top: 0;
@@ -59,23 +63,47 @@ body {
 .container .box:hover:before,
 .container .box:hover:after {
     transform: skewX(0deg);
-    left: 20px;;
-    width: calc(100% - 90px)
+    left: 20px;
+    width: calc(100% - 90px);
 }
 
-.container .box:nth-child(1):before,
-.container .box:nth-child(1):after {
-    background: linear-gradient(315deg,#ffbc00,#ff0058);
+.container:nth-child(1) .box::before,
+.container:nth-child(1) .box::after {
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
 }
 
-.container .box:nth-child(2):before,
-.container .box:nth-child(2):after {
-    background: linear-gradient(315deg,#03a9f4,#ff0058);
+.container:nth-child(2) .box::before,
+.container:nth-child(2) .box::after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
 }
 
-.container .box:nth-child(3):before,
-.container .box:nth-child(3):after {
-    background: linear-gradient(315deg,#4dff03,#00d0ff);
+.container:nth-child(3) .box::before,
+.container:nth-child(3) .box::after {
+    background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box span::before{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blue(10px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .box:hover span::after{
+
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+
 }
 
 .content {

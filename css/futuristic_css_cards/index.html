@@ -5,7 +5,122 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Future Cards</title>
-    <link rel="stylesheet" href="style.css"/>
+    <style>
+        * {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1d061a;
+}
+
+.container {
+    display: flex;
+    justify-content: center; /* Fixed the justify-content property */
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 40px 0;
+}
+
+.container .box {
+    position: relative;
+    width: 320px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 30px;
+    transition: 0.5s;
+}
+
+.container .box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+}
+
+.container .box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50px;
+    width: 50%;
+    height: 100%;
+    background: #fff;
+    border-radius: 8px;
+    transform: skewX(15deg);
+    transition: 0.5s;
+    filter: blur(30px);
+    transition: 0.5s;
+}
+
+.container .box:hover:before,
+.container .box:hover:after {
+    transform: skewX(0deg);
+    left: 20px;
+    width: calc(100% - 90px);
+}
+
+.container:nth-child(1) .box::before,
+.container:nth-child(1) .box::after {
+    background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.container:nth-child(2) .box::before,
+.container:nth-child(2) .box::after {
+    background: linear-gradient(315deg, #03a9f4, #ff0058);
+}
+
+.container:nth-child(3) .box::before,
+.container:nth-child(3) .box::after {
+    background: linear-gradient(315deg, #4dff03, #00d0ff);
+}
+
+.container .box span::before{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    pointer-events: none;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blue(10px);
+    opacity: 0;
+    transition: 0.5s;
+    animation: animate 2s ease-in-out infinite;
+}
+.container .box:hover span::after{
+
+    top: -50px;
+    left: 50px;
+    width: 100px;
+    height: 100px;
+    opacity: 1;
+
+}
+
+.content {
+    z-index: 1;
+    /* display: none;; */
+}
+
+    </style>
 </head>
 <body>
     <div class="container">
@@ -18,7 +133,6 @@
             </div>
         </div>
     </div>
-    <div class="container">
         <div class="box">
             <span></span>
             <div class="content">
@@ -28,7 +142,6 @@
             </div>
         </div>
     </div>
-    <div class="container">
         <div class="box">
             <span></span>
             <div class="content">
