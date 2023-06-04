@@ -16,7 +16,7 @@ function fetchIssues () {
 }
 
 document.getElementById('issueInputForm').addEventListener('submit', saveIssue);
-
+document.getElementById('issueInputForm').reset();
 
 function saveIssue(e) {
     var issueID = chance.guid();
@@ -42,8 +42,6 @@ function saveIssue(e) {
         issues.push(issues);
         localStorage.setItem('issues', JSON.stringify(issues));
     }
-
-    document.getElementById('issueInputForm').reset();
 
     fetchIssues();
     e.preventDefault();
