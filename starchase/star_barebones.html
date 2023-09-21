@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>starChase</title>
+    <style>
+        /* Add CSS styles for your game interface here */
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000; /* Set your desired background color */
+            display: flex;
+            flex-direction: column; /* Arrange children vertically */
+            align-items: center;
+            height: 100vh;
+        }
+
+        .desc {
+            color: whitesmoke;
+            text-align: center; /* Center text within the container */
+            margin-bottom: 20px;
+            border: #fff 2px dashed; /* Add spacing between "desc" and game */
+        }
+
+        /* Customize your game canvas styles */
+        canvas {
+            border: 5px solid #fff; /* Set canvas border style */
+        }
+
+        /* Customize your game button styles */
+        .game-button {
+            background-color: #3498db; /* Set button background color */
+            color: #fff; /* Set button text color */
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btns {
+            text-align: center;
+            padding-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="desc">
+        <h1><strong>***starChase***</strong></h1>
+        <p>A challenging fun game of skill and speed.</p>
+        <ul>
+            <li>Worms will pop out of any hole TEN times</li>
+            <li>Whack as many as you can - you must be QUICK</li>
+            <li>Hit the START button to begin playing...</li>
+        </ul>
+    </div>
+
+    <div>
+        <canvas id="gameCanvas" width="800" height="600"></canvas>
+        <div>
+            <table>
+            <tr>
+                <td class="hole">
+                <img class="stars" src="/starchase/cd4k_img/stars.png" alt="stars"></td>
+                <td class="hole">
+                    <img class="stars" src="/starchase/cd4k_img/stars.png" alt="stars"></td>
+                    <td class="hole">
+                        <img class="stars" src="/starchase/cd4k_img/stars.png" alt="stars"></td>
+                </td>
+            </tr>
+            <tr>
+                <td class="hole">
+                <img class="stars" src="/starchase/cd4k_img/stars.png" alt="stars"></td>
+                <td class="hole">
+                    <img class="stars" src="/starchase/cd4k_img/stars.png" alt="stars"></td>
+                    <td class="hole">
+                        <img class="stars" src="/starchase/cd4k_img/stars.png" alt="stars"></td>
+                </td>
+            </tr>
+            <tr>
+                <td class="rank" colspan="3">
+                <button id="startButton">Start</button>
+                Hits: <strong id="scoreBoard">0</strong>
+                </td>
+            </tr>
+            </table>
+            </div>
+        <div class="btns">
+            <!-- Add game buttons here -->
+            <button class="game-button" id="startGame">Start Game</button>
+            <button class="game-button" id="pauseButton">Pause</button>
+            <button class="game-button" id="resumeButton">Resume</button>
+            <button class="game-button" id="stopButton">Stop</button>
+            <!-- Add scoreboard elements -->
+            <div id="scoreboard">
+                <span>Score: <span id="score">0</span></span>
+                <span>Lives: <span id="lives">3</span></span>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // JavaScript code for your game logic will go here
+        // Define variables to store game-related data
+let score = 0;
+let lives = 3;
+let isGamePaused = false;
+
+// Get references to HTML elements
+const scoreElement = document.getElementById("score");
+const livesElement = document.getElementById("lives");
+const startButton = document.getElementById("startButton");
+const pauseButton = document.getElementById("pauseButton");
+const resumeButton = document.getElementById("resumeButton");
+const stopButton = document.getElementById("stopButton");
+
+// Get the canvas element and its context
+const canvas = document.getElementById("gameCanvas")
+const ctx = canvas.getContext("2d")
+
+// Function to update the scoreboard
+function updateScoreboard() {
+    scoreElement.textContent = score;
+    livesElement.textContent = lives;
+}
+
+// Function to handle when the player misses a target
+function playerMissed() {
+    lives--;
+    updateScoreboard();
+
+    if (lives === 0) {
+        // Game over logic here
+        alert("Game Over!");
+        // You can add more game over actions here, like resetting the game.
+    }
+}
+
+// Function to draw stars on the canvas
+function drawStars() {
+    // Clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Draw stars at random positions
+    for (let i = 0; i < 5; i++) {
+        const x = Main.random * canvas.width;
+        const y = Math.random * canvas.height;
+        ctx.fillStyle = "fff";
+        ctx.fillRect(x, y, 10, 10); // You can customize the size
+    }
+}
+
+// Add event listeners to your buttons
+startGame.addEventListener("click", () => {
+    // Start game logic here
+    // You'll need to implement your game's main loop and mechanics.
+    // This is where you'll generate stars and handle player interactions.
+    // Remember to set isGamePaused to false when starting.
+});
+
+pauseButton.addEventListener("click", () => {
+    // Pause game logic here
+    isGamePaused = true;
+    // You might want to pause animations or timers here.
+});
+
+resumeButton.addEventListener("click", () => {
+    // Resume game logic here
+    isGamePaused = false;
+    // You might want to resume animations or timers here.
+});
+stopButton.addEventListener("click", () => {
+    // Stop game logic here
+    isGameStopped = true;
+    // You might want to pause animations or timers here.
+});
+// Initialize the scoreboard
+updateScoreboard();
+
+    </script>
+</body>
+</html>
