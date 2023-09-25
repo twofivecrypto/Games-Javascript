@@ -1,0 +1,42 @@
+/* Add some spacing and a shadow to the form */
+form {
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Style the input field with some padding and a rounded border */
+  input {
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  /* Style the button with some padding and a rounded border */
+  button {
+    padding: 0.75rem 1rem;
+    border-radius: 0.25rem;
+  }
+  
+  /* Add some spacing and a shadow to the task list */
+ul {
+  margin-top: 1.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the task items with some padding and a rounded border */
+li {
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+}
+/* Style the button to match the "Add" button */
+button {
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  background-color: #68D391; /* Match the background color of the "Add" button */
+  color: white; /* Text color */
+  transition: background-color 0.3s ease; /* Add a smooth transition for the background color */
+}
+
+/* Style the button hover effect */
+button:hover {
+  background-color: #48BB78; /* Darker green for hover effect */
+}

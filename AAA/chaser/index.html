@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Include the Tailwind CSS stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.15/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mx-auto p-4">
+        <h1 class="text-2xl font-semibold mb-4">To-Do List</h1>
+        <div class="flex mb-4">
+            <input type="text" id="add-task" class="border rounded-l p-2 w-full" placeholder="Add a new task">
+            <button id="add" class="bg-green-500 text-white rounded-r px-4 hover:bg-green-600">Add</button>
+        </div>
+        <ul id="task-list">
+            <!-- To-Do tasks will be inserted here dynamically -->
+            <!-- Edit Task List Here-->
+        </ul>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

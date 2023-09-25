@@ -1,0 +1,46 @@
+        /* Add CSS styles for your game interface here */
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: large;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #363636; /* Set your desired background color */
+            display: flex;
+            flex-direction: column; /* Arrange children vertically */
+            align-items: center;
+            height: 100vh;
+        }
+
+        .desc {
+            color: whitesmoke;
+            text-align: center; /* Center text within the container */
+            margin-bottom: 20px;
+            border: #fff 2px dashed; /* Add spacing between "desc" and game */
+        }
+
+        /* Customize your game canvas styles */
+        canvas {
+            border: 5px solid #fff; /* Set canvas border style */
+        }
+
+        /* Customize your game button styles */
+        .game-button {
+            background-color: #3498db; /* Set button background color */
+            color: #fff; /* Set button text color */
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .btns {
+            text-align: center;
+            padding-top: 15px;
+        }
+
+        .score {
+            color:#fff;
+        }
