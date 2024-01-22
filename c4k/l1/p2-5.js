@@ -6,6 +6,7 @@ var h1 = document.createElement('h1');
 h1.textContent = 'The Statue of Liberty';
 h1.style.backgroundColor = 'aqua';
 h1.style.borderRadius = '12px';
+h1.style.padding = '20px';
 
 // Append h1 to the container
 container.appendChild(h1);
