@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bassen Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+    <!-- Hero Section -->
+    <section class="bg-gray-900 py-20">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">Grow Your Business with Powerful Web Services
+                from Bassen Digital</h1>
+            <p class="text-xl md:text-2xl mb-12">We help businesses achieve their online goals with strategic web
+                design, development, and marketing solutions.</p>
+            <a href="#"
+                class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-4 px-8 rounded-full shadow-lg uppercase tracking-wider">Get
+                a free consultation!</a>
+        </div>
+    </section>
+    <!-- Services Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="flex items-stretch">
+                    <div class="bg-white rounded-lg shadow-lg p-6 w-full">
+                        <h2 class="text-3xl font-bold mb-4">Web Design & Development</h2>
+                        <p class="text-gray-700 mb-2">Crafting visually stunning and user-centric websites that drive
+                            results for your business.</p>
+                    </div>
+                </div>
+                <div class="flex items-stretch">
+                    <div class="bg-white rounded-lg shadow-lg p-6 w-full">
+                        <h2 class="text-3xl font-bold mb-4">Brand Identity</h2>
+                        <p class="text-gray-700 mb-2">Building unique brand identities that resonate with your target
+                            audience and set you apart from the competition.</p>
+                    </div>
+                </div>
+                <div class="flex items-stretch">
+                    <div class="bg-white rounded-lg shadow-lg p-6 w-full">
+                        <h2 class="text-3xl font-bold mb-4">AI-powered Customer Chatbot Support</h2>
+                        <p class="text-gray-700 mb-2">Enhancing customer engagement and satisfaction with AI-powered
+                            chatbots that provide instant support.</p>
+                    </div>
+                </div>
+                <div class="flex items-stretch">
+                    <div class="bg-white rounded-lg shadow-lg p-6 w-full">
+                        <h2 class="text-3xl font-bold mb-4">Copywriting Services</h2>
+                        <p class="text-gray-700 mb-2">Creating compelling and persuasive content that resonates with
+                            your
+                            audience and drives conversions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full px-4">
+                    <h2 class="text-3xl font-bold mb-4">Why Choose Us</h2>
+                    <div x-data="{ isOpen: false }">
+                        <div class="rounded-lg border border-gray-300 overflow-hidden mb-4">
+                            <button @click="isOpen = !isOpen"
+                                class="w-full text-left font-semibold py-4 px-6 bg-gray-200 hover:bg-gray-300 focus:outline-none">
+                                Experienced team of web professionals
+                            </button>
+                            <div x-show="isOpen" class="p-6">
+                                We have a dedicated team with years of experience in web design, development, and
+                                marketing.
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-gray-300 overflow-hidden mb-4">
+                            <button @click="isOpen = !isOpen"
+                                class="w-full text-left font-semibold py-4 px-6 bg-gray-200 hover:bg-gray-300 focus:outline-none">
+                                Proven track record of success
+                            </button>
+                            <div x-show="isOpen" class="p-6">
+                                We have successfully delivered projects for various clients, achieving measurable
+                                results.
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-gray-300 overflow-hidden mb-4">
+                            <button @click="isOpen = !isOpen"
+                                class="w-full text-left font-semibold py-4 px-6 bg-gray-200 hover:bg-gray-300 focus:outline-none">
+                                Affordable and transparent pricing
+                            </button>
+                            <div x-show="isOpen" class="p-6">
+                                We offer competitive pricing and transparent quotes, ensuring you get value for your
+                                investment.
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-gray-300 overflow-hidden mb-4">
+                            <button @click="isOpen = !isOpen"
+                                class="w-full text-left font-semibold py-4 px-6 bg-gray-200 hover:bg-gray-300 focus:outline-none">
+                                Focus on results
+                            </button>
+                            <div x-show="isOpen" class="p-6">
+                                We prioritize achieving tangible results for our clients, focusing on their business
+                                objectives.
+                            </div>
+                        </div>
+                        <div class="rounded-lg border border-gray-300 overflow-hidden mb-4">
+                            <button @click="isOpen = !isOpen"
+                                class="w-full text-left font-semibold py-4 px-6 bg-gray-200 hover:bg-gray-300 focus:outline-none">
+                                Free consultations
+                            </button>
+                            <div x-show="isOpen" class="p-6">
+                                We offer free consultations to discuss your project requirements and explore how we can
+                                help you succeed online.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Testimonials -->
+    <section class="bg-gray-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 px-4 mb-8">
+                    <blockquote class="italic text-lg text-gray-700">"Bassen Digital transformed our web presence with
+                        an
+                        incredible website design that perfectly encapsulates our brand identity. Their attention to
+                        detail
+                        and creativity significantly elevated our online presence." - E. Parent, Big E Dogs N Tacos
+                    </blockquote>
+                </div>
+                <div class="w-full md:w-1/2 px-4 mb-8">
+                    <blockquote class="italic text-lg text-gray-700">"Working with Bassen Digital was a game-changer for
+                        our brand. Their expertise in web design and brand identity helped us stand out in a crowded
+                        market
+                        and attract the right audience. Highly recommended!" - K. Ventura, All Trade General Contracting
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Call to Action -->
+    <section class="bg-blue-500 py-20">
+        <div class="container mx-auto px-4 text-center text-white">
+            <h2 class="text-4xl md:text-6xl font-bold leading-tight mb-6">Ready to get started? Contact us today for a
+                free consultation!</h2>
+            <a href="#"
+                class="bg-white hover:bg-gray-200 text-blue-500 font-bold py-4 px-8 rounded-full shadow-lg uppercase tracking-wider">Contact
+                Us</a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto flex items-center justify-between px-4">
+            <p>&copy; 2024 Bassen Digital. All rights reserved.</p>
+            <ul class="flex">
+                <li class="mr-6"><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2"></script>
+</body>
+
+</html>
