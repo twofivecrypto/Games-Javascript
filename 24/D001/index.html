@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article 14 - Black and African News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .btn {
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            margin: 10px 0;
+        }
+        .btn:hover {
+            background-color: #005f73;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: transform 0.5s;
+            margin: 10px 0;
+        }
+        .box.animate {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body>
+    <h1 id="main-header">Welcome to Article 14</h1>
+    <p>Your source for Black and African news.</p>
+
+    <!-- Button Example -->
+    <button id="change-text-btn" class="btn">Click Me</button>
+    <p id="paragraph">This is a sample paragraph. Click the button to change my text.</p>
+
+    <!-- Form Validation Example -->
+    <h2>Subscribe to our Newsletter</h2>
+    <form id="newsletter-form">
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <br><br>
+        <button type="submit" class="btn">Subscribe</button>
+    </form>
+
+    <!-- Load More Content Example -->
+    <h2>Latest Articles</h2>
+    <div id="content">
+        <p>Article 1: Exploring the rich culture of Africa.</p>
+        <p>Article 2: Prominent Black leaders making a difference.</p>
+    </div>
+    <button id="load-more" class="btn">Load More Articles</button>
+
+    <!-- Animation Example -->
+    <div class="box"></div>
+
+    <!-- JavaScript -->
+    <script>
+        // Changing Text Example
+        document.getElementById("change-text-btn").addEventListener("click", function() {
+            document.getElementById("paragraph").textContent = "You have successfully changed the text!";
+        });
+
+        // Form Validation Example
+        document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+            let email = document.getElementById("email").value;
+            if (!email.includes("@")) {
+                alert("Please enter a valid email.");
+                event.preventDefault(); // Prevent form submission
+            }
+        });
+
+        // Load More Content Example
+        document.getElementById("load-more").addEventListener("click", function() {
+            let content = document.getElementById("content");
+            content.innerHTML += "<p>Article 3: The impact of African music on the world.</p>";
+            content.innerHTML += "<p>Article 4: Inspirational stories from the Black community.</p>";
+        });
+
+        // Animation Example
+        document.querySelector(".box").addEventListener("click", function() {
+            this.classList.toggle("animate");
+        });
+    </script>
+</body>
+</html>
