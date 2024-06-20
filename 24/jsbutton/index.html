@@ -20,9 +20,10 @@
         cursor: pointer;
         margin: 10px 0;
         border-radius: 8px;
+        border: black 2px solid;
     }
     .btn:hover {
-        background-color: #005f73;
+        background-color: #10d7ff;
     }
     #color-paragraph {
         padding: 10px;
@@ -42,10 +43,10 @@
     </button>
     <p id="color-paragraph">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur quasi ad nulla vitae illum voluptatum maxime quos alias adipisci animi!</p>
     <script>
-        document.getElementById("change-color-btn").addEventListener("click", function {
+        document.getElementById("change-color-btn").addEventListener("click", function() {
             let paragraph = document.getElementById("color-paragraph");
             paragraph.style.backgroundColor = getRandomColor();
-        } );
+        });        
 
         function getRandomColor() {
             let letters = '0123456789ABCEDFHIJKLMNOPQRSTUVWXYZ';
